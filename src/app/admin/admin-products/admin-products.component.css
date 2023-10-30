@@ -1,0 +1,13 @@
+a {
+    text-decoration: none;
+}
+
+.pagination{
+    padding: 20px 16px;
+    float: right;
+    font-size: 18px;
+   
+}
+.pagination::ng-deep .ngx-pagination .current {
+    background-color: red;
+}

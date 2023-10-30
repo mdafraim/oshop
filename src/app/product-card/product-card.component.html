@@ -1,0 +1,10 @@
+<div class="card">
+    <img class="card-img-top" [src]="products.imageUrl">
+    <div class="card-body">
+        <h2 class="card-title">{{products.title}}</h2>
+        <p class="card-text">{{products.price | currency: 'USD'}}</p>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary btn-block">Add to card</button>
+    </div>
+</div>
