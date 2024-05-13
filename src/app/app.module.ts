@@ -14,6 +14,9 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrderComponent } from './admin/admin-order/admin-order.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductFormComponent } from './admin/product-form/product-form.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MyOrderComponent,
     AdminProductsComponent,
     AdminOrderComponent,
-    LoginComponent
+    LoginComponent,
+    ProductFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
