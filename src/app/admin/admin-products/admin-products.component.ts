@@ -9,6 +9,8 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class AdminProductsComponent implements OnInit {
   productsList: any[] = [];
+  filterProduct: any[] = [];
+  search;
   constructor(
     private http: HttpClient,
     private appService: AppService
@@ -22,8 +24,15 @@ export class AdminProductsComponent implements OnInit {
     this.appService.getAllProducts()
     .subscribe((res:any) => {
       console.log(res);
-      this.productsList = res;
+      this.filterProduct = this.productsList = res;
     })
+  }
+
+
+
+  filter(search:string){
+    this.filterProduct = (search) ? this.productsList.filter(p => p.title.toLowerCase().includes(search.toLowerCase())) : 
+    this.productsList;
   }
   
 
