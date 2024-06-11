@@ -1,0 +1,11 @@
+/* .total {
+    width: 100%;
+}
+.total td {
+    text-align: right;
+} */
+.thumbnil{
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+}

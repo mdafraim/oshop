@@ -1,1 +1,26 @@
-<p>shopping-cart works!</p>
+ <div>
+ <table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Title</th>
+            <th></th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cart">
+
+            <td scope="row">{{item.title}}</td>
+            <td><button class="btn btn-success" (click)="increamentQuantity(item)">+</button></td>
+            <p>{{item.quantity}}</p>
+            <td><button class="btn btn-danger" (click)="decreamentQuantity(item)">-</button></td>
+            <td>{{item.price}}</td>
+        </tr>
+        <tr nzalign="right" class="total">
+            <td colspan="5" style="text-align:right" nzalign="right"><strong>Total :-</strong>{{getTotal()}}</td>
+        </tr>
+    </tbody>
+ </table>
+</div>
+

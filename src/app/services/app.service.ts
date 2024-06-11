@@ -1,12 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/internal/operators/map';
+import { take } from 'rxjs/internal/operators/take';
+import { Product } from '../model/Product';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
+  // itemsSubject: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+
+  }
 
   //API Methods
   public get(url:string, options?:any){
@@ -29,7 +36,7 @@ export class AppService {
 
 
   //Product API
-  addProduct(data:any){
+  addProduct(data:string){
     return this.http.post('http://localhost:3000/api/products', data);
   }
   getAllProducts(){
@@ -45,4 +52,7 @@ export class AppService {
   deleteProduct(id:any){
     return this.http.delete('http://localhost:3000/api/products/' + id)
   }
+
+
+  
 }

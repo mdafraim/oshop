@@ -54,21 +54,22 @@ export class ProductFormComponent implements OnInit {
   }
   
   getCategory(){
-    this.appService.getCategories().subscribe((res:any) => {
+    this.appService.getCategories()
+    .subscribe((res:any) => {
       console.log(res);
       this.CategoryData = res;
     })
   }
 
   saveProduct(){
-    if(this.id){
-      this.editProduct()
-    } else
+    // if(this.id){ this.editProduct()}
+    
     this.appService.addProduct(this.productForm.value)
     .subscribe((res) => {
       console.log(res);
-      this.router.navigate(['/admin/products']);
+      this.router.navigate(['/admin/products'])
     })
+  
   }
 
   getProductById(id:any){
